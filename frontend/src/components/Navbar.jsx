@@ -19,7 +19,7 @@ function Navbar() {
 
 const styles = {
   nav: {
-    background: "#1e1e2f",
+    background: "#1a1a2e",
     color: "white",
     padding: "15px 30px",
     display: "flex",
@@ -28,11 +28,12 @@ const styles = {
     position: "sticky",
     top: 0,
     zIndex: 1000,
-    boxShadow: "0 4px 10px rgba(0,0,0,0.15)"
+    boxShadow: "0 4px 10px rgba(0,0,0,0.25)",
   },
   logo: {
     margin: 0,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontSize: "22px",
   },
   menu: {
     display: "flex",
@@ -44,7 +45,7 @@ const styles = {
     textDecoration: "none",
     fontWeight: "bold",
     transition: "0.3s",
-  }
+  },
 };
 
 export default Navbar;
