@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WeatherDashboard from "./components/WeatherDashboard";
+import Weather from "./pages/Weather";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -23,6 +25,8 @@ function App() {
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/map" element={<MapPage />} />
             <Route path="/safezones" element={<SafeZones />} />
+            <Route path="/weather" element={<Weather />} />
+
           </Routes>
         </div>
 

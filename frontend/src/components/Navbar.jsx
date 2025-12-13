@@ -12,6 +12,7 @@ function Navbar() {
         <li><Link to="/alerts" style={styles.link}>Alerts</Link></li>
         <li><Link to="/safezones" style={styles.link}>Safe Zones</Link></li>
         <li><Link to="/about" style={styles.link}>About</Link></li>
+        <li><Link to="/weather">Weather</Link></li>
       </ul>
     </nav>
   );
