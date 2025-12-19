@@ -1,18 +1,15 @@
-import React from "react";
+import { useEffect } from "react";
+import L from "leaflet";
 
-export default function SafeZoneMarker({ zone }) {
-  return (
-    <div
-      style={{
-        background: "#e4ffe5",
-        padding: "15px",
-        marginBottom: "15px",
-        borderRadius: "10px",
-        borderLeft: "5px solid #2ecc71",
-      }}
-    >
-      <h3 style={{ margin: 0 }}>{zone.name}</h3>
-      <p style={{ margin: 0 }}>{zone.description}</p>
-    </div>
-  );
+export default function SafeZoneMarker({ position, name, map }) {
+  useEffect(() => {
+    if (!map || !position) return;
+
+    const marker = L.marker([position.lat, position.lng]).addTo(map);
+    marker.bindPopup(name);
+
+    return () => map.removeLayer(marker);
+  }, [map, position, name]);
+
+  return null;
 }

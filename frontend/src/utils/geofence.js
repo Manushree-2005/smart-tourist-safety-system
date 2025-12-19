@@ -1,29 +1,28 @@
-// utils/geofence.jsx
+import { calculateDistance } from "./locationHelper";
 
-export function isInsideGeofence(userLocation, zoneCenter, radiusMeters) {
-  const R = 6371e3; // radius of Earth in meters
-
-  const lat1 = (userLocation.lat * Math.PI) / 180;
-  const lat2 = (zoneCenter.lat * Math.PI) / 180;
-
-  const deltaLat = ((zoneCenter.lat - userLocation.lat) * Math.PI) / 180;
-  const deltaLng = ((zoneCenter.lng - userLocation.lng) * Math.PI) / 180;
-
-  const a =
-    Math.sin(deltaLat / 2) ** 2 +
-    Math.cos(lat1) *
-      Math.cos(lat2) *
-      Math.sin(deltaLng / 2) ** 2;
-
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-  const distance = R * c;
-
-  return distance <= radiusMeters;
-}
-
-export function checkMultipleZones(userLocation, zones) {
-  return zones.filter(zone =>
-    isInsideGeofence(userLocation, zone.center, zone.radius)
+// Check if user is inside geofence
+export const isInsideGeofence = (userLocation, zoneCenter, radiusMeters) => {
+  const distance = calculateDistance(
+    userLocation.lat,
+    userLocation.lng,
+    zoneCenter.lat,
+    zoneCenter.lng
   );
-}
+  return distance <= radiusMeters;
+};
+
+// Filter zones that user is inside
+export const checkMultipleZones = (userLocation, zones) =>
+  zones.filter(zone => isInsideGeofence(userLocation, zone.center, zone.radius));
+
+// Check if destination is safe
+export const getSafestRoute = (user, destination, dangerZones) => {
+  const isDanger = (lat, lng) =>
+    dangerZones.some(zone => calculateDistance(lat, lng, zone.lat, zone.lng) <= zone.radius);
+
+  if (isDanger(destination.lat, destination.lng)) {
+    return { blocked: true, message: "Destination is inside a danger zone!" };
+  }
+
+  return { blocked: false, user, destination };
+};

@@ -1,14 +1,10 @@
-// src/pages/About.jsx
 import React from "react";
 
 function About() {
   return (
     <div style={{ padding: "20px" }}>
       <h2>About Smart Tourist Safety System</h2>
-      <p>
-        The Smart Tourist Safety System helps travelers stay safe by
-        providing real-time alerts, safe zones, and emergency support.
-      </p>
+      <p>The Smart Tourist Safety System helps travelers stay safe by providing real-time alerts, safe zones, and emergency support.</p>
 
       <h3>Features</h3>
       <ul>
@@ -19,10 +15,7 @@ function About() {
       </ul>
 
       <h3>Our Mission</h3>
-      <p>
-        To provide tourists with reliable safety information for a stress-free
-        travel experience using smart technology and real-time data.
-      </p>
+      <p>Provide tourists with reliable safety information for a stress-free travel experience using smart technology.</p>
     </div>
   );
 }

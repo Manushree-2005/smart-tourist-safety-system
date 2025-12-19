@@ -2,18 +2,14 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer
-      style={{
-        background: "#1e1e2f",
-        color: "white",
-        textAlign: "center",
-        padding: "12px",
-        marginTop: "20px"
-      }}
-    >
-      © 2025 Smart Tourist Safety System
+    <footer style={styles.footer}>
+      <p>© 2025 Smart Tourist Safety. All rights reserved.</p>
     </footer>
   );
 }
+
+const styles = {
+  footer: { textAlign: "center", padding: "15px", backgroundColor: "#0077cc", color: "#fff", position: "fixed", width: "100%", bottom: 0 }
+};
 
 export default Footer;
