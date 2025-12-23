@@ -1,33 +1,25 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Alerts from "./pages/Alerts";
 import MapPage from "./pages/MapPage";
-import SafeZones from "./pages/SafeZones";
 import Weather from "./pages/Weather";
+import LiveAlerts from "./pages/LiveAlerts";
+import EmergencyContacts from "./pages/EmergencyContacts";
 
-function App() {
+export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/alerts" element={<Alerts />} />
         <Route path="/map" element={<MapPage />} />
-        <Route path="/safezones" element={<SafeZones />} />
         <Route path="/weather" element={<Weather />} />
+        <Route path="/alerts" element={<LiveAlerts />} />
+        <Route path="/emergency" element={<EmergencyContacts />} />
       </Routes>
-
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
-
-export default App;

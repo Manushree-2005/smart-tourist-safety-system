@@ -1,16 +1,15 @@
 {
-  "name": "server",
+  "name": "smart-tourist-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
+    "axios": "^1.6.0",
     "cors": "^2.8.5",
-    "express": "^5.2.1"
+    "express": "^4.22.1",
+    "node-fetch": "^3.3.2"
   }
 }

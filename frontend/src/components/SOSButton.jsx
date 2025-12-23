@@ -1,27 +1,26 @@
-import React from "react";
+export default function SOSButton({ location }) {
+  const sendSOS = () => {
+    const msg = `🚨 SOS!
+I need help.
+https://www.google.com/maps?q=${location.lat},${location.lng}`;
 
-function SOSButton({ onSOS }) {
+    window.open(
+      `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`
+    );
+  };
+
   return (
-    <button
-      onClick={onSOS}
-      style={{
-        position: "absolute",
-        bottom: "20px",
-        right: "20px",
-        background: "red",
-        color: "white",
-        fontSize: "20px",
-        borderRadius: "50%",
-        width: "80px",
-        height: "80px",
-        border: "none",
-        boxShadow: "0px 0px 15px rgba(255,0,0,0.8)",
-        animation: "pulse 1s infinite",
-      }}
-    >
-      SOS
+    <button onClick={sendSOS} style={btn}>
+      🚨 EMERGENCY SOS
     </button>
   );
 }
 
-export default SOSButton;
+const btn = {
+  position: "absolute",
+  bottom: 20,
+  right: 20,
+  padding: 15,
+  background: "red",
+  color: "#fff",
+};
