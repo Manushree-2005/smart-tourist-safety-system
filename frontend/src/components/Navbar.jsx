@@ -5,13 +5,14 @@ export default function Navbar() {
     <nav style={nav}>
       <h2>🧭 Smart Tourist Safety</h2>
 
-      <div style={links}>
-        <Link to="/" style={link}>Home</Link>
-        <Link to="/map" style={link}>Plan Trip</Link>
-        <Link to="/weather" style={link}>Weather</Link>
-        <Link to="/alerts" style={link}>Alerts</Link>
-        <Link to="/emergency" style={link}>Emergency</Link>
-      </div>
+      <ul style={styles.menu}>
+        <li><Link to="/" style={styles.link}>Home</Link></li>
+        <li><Link to="/map" style={styles.link}>Safety Map</Link></li>
+        <li><Link to="/alerts" style={styles.link}>Alerts</Link></li>
+        <li><Link to="/safezones" style={styles.link}>Safe Zones</Link></li>
+        <li><Link to="/about" style={styles.link}>About</Link></li>
+        <li><Link to="/weather">Weather</Link></li>
+      </ul>
     </nav>
   );
 }
