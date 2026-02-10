@@ -7,6 +7,10 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import MapPage from "./pages/MapPage";
 import SafeZones from "./pages/SafeZones";
+import IncidentReport from "./pages/IncidentReport";
+
+import Weather from "./pages/Weather";
+
 
 export default function App() {
   return (
@@ -17,12 +21,10 @@ export default function App() {
         <div style={{ padding: "20px", minHeight: "80vh" }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/alerts" element={<Alerts />} />
             <Route path="/map" element={<MapPage />} />
             <Route path="/safezones" element={<SafeZones />} />
             <Route path="/weather" element={<Weather />} />
-
+            <Route path="/incident-report" element={<IncidentReport />} />
           </Routes>
         </div>
 

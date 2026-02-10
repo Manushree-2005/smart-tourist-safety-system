@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+const styles = {
+  nav: { padding: "10px", background: "#222", color: "#fff" },
+  menu: { listStyle: "none", display: "flex", gap: "15px" },
+  link: { color: "#fff", textDecoration: "none" }
+};
 
 export default function Navbar() {
   return (
@@ -11,7 +16,7 @@ export default function Navbar() {
         <li><Link to="/alerts" style={styles.link}>Alerts</Link></li>
         <li><Link to="/safezones" style={styles.link}>Safe Zones</Link></li>
         <li><Link to="/about" style={styles.link}>About</Link></li>
-        <li><Link to="/weather">Weather</Link></li>
+        <li><Link to="/incident-report">Incident Report</Link></li>
       </ul>
     </nav>
   );
